@@ -9,8 +9,7 @@ function drawGradient() {
 	canvas.height = window.innerHeight;
 
   //set the intial tilt, or slope of the gradient
-  var initial_tilt = randomRange(-1, 1);
-  console.log('Initial Tilt: ' + initial_tilt);
+  var initial_tilt = randomRange(-4, 4);
 
   //Initialize hue and horizontal_hue, variables that keep track of the hue as the canvas is looped through
   var hue = randomRange(0, 360);
