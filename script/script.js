@@ -11,6 +11,10 @@ function drawGradient() {
   //set the intial tilt, or slope of the gradient
   var initial_tilt = randomRange(-4, 4);
 
+  //Set the original direction/modifier for the vertical hue shift
+  var hue_constant = 5;
+  if (randomRange(0, 1) > 0.5) hue_constant = -5;
+
   //Initialize hue and horizontal_hue, variables that keep track of the hue as the canvas is looped through
   var hue = randomRange(0, 360);
   var horizontal_hue = 0;
@@ -37,7 +41,7 @@ function drawGradient() {
       ctx.fillRect(Math.floor(x * x_size), Math.floor(y * y_size), Math.ceil(x_size), Math.ceil(y_size));
     }
     //Increase the hue vertically, and reset the slope/tilt
-    hue += 5 * randomRange(0.5, 1.5);
+    hue += hue_constant * randomRange(0.5, 1.5);
     horizontal_hue = 0;
   }
 }
